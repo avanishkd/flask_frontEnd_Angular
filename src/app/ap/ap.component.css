@@ -1,0 +1,43 @@
+p {
+  font-family: Lato;
+}
+
+.form-control{
+  border-radius: 50px;
+}
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+  
+}
+.div1{
+  width: 400px;
+  height: 450px;
+  margin-top: 200px;
+  margin-left: 550px;
+  
+  border-radius: 10px;
+}
+
+.ng-invalid:not(form):not(div)  {
+  border-left: 5px solid #a94442; /* red */
+
+}
+
+.p-3{
+  width: 300px;
+  height: 400px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+#sub{
+  margin-left: 650px;
+}
+
+.form-control{
+  width:200px;
+}
+
+body{
+  background-image: url("img.jpg")
+}

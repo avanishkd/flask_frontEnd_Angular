@@ -1,0 +1,22 @@
+<div class="center">
+  Email Id:<input [(ngModel)]="email" type="text"><br><br>
+  Book Name:<input [(ngModel)]="book"type="text"><br><br>
+  Number of books   <input [(ngModel)]="num"type="text"><br><br>
+  <button (click)='updatebooks(email,book,num)'>Submit</button>
+</div> 
+
+<!-- <div class="center">
+  <form>
+    <label for="email">Email Id:</label>
+    <input type="text" id="email" [(ngModel)]="email" placeholder="Your Email Id..">
+
+    <label for="bName">Book Name:</label>
+    <input type="text" id="bName" [(ngModel)]="bName" placeholder="Book Name..">
+
+    <label for="bPrice">Number of books:</label>
+    <input type="text" id="nBook" [(ngModel)]="nBook" placeholder="Number of books..">
+
+  
+    <input type="submit" value="Submit" (click)='updatebooks(email,bName,nBook)'>
+  </form>
+</div> -->

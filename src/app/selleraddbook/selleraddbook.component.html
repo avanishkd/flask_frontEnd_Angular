@@ -1,0 +1,24 @@
+<div class="center">
+  Email Id:<input [(ngModel)]="email" type="text"><br><br>
+  Book Name:<input [(ngModel)]="book"type="text"><br><br>
+  Price:   <input [(ngModel)]="prc"type="text"><br><br>
+  <button (click)='getbooks(email,book,prc)'>Submit</button>
+</div>
+
+
+
+<!-- <div class="center">
+  <form>
+    <label for="email">Email Id:</label>
+    <input type="text" id="email" name="email" placeholder="Your Email Id..">
+
+    <label for="bName">Book Name:</label>
+    <input type="text" id="bName" name="bName" placeholder="Book Name..">
+
+    <label for="bPrice">Book Price:</label>
+    <input type="text" id="bPrice" name="bPrice" placeholder="Book Price..">
+
+  
+    <input type="submit" value="Submit" (click)='getbooks(email,bName,bPrice)'>
+  </form>
+</div> -->

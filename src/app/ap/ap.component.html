@@ -1,0 +1,51 @@
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<div class="div1">
+<div class="p-3">
+
+	
+	<label for="exampleInputPassword1">Email</label> &nbsp; <br/>
+	
+			<input style="border-radius: 50px; padding-left:10px; width:200px; height:35px;" placeholder="Email" [(ngModel)]="email"><br/>
+			<br/>
+
+		<label for="exampleInputPassword1">Phone</label> &nbsp; <br/>
+
+		<input style="border-radius: 50px; padding-left:10px; width:200px; height:35px;" placeholder="Phone" [(ngModel)]="phone"><br/>
+		<br/>
+
+	<form #passwordsForm='ngForm'>
+		<div ngModelGroup="passwords" #passwords="ngModelGroup" appCheckPassword>
+
+			<div class="form-group">
+				<label for="exampleInputPassword1">Password</label> &nbsp;
+				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" #passwordA="ngModel" name="passwordA"
+				 required id="passwordA" [(ngModel)]="password1"><br/>
+			</div>
+			
+			<!-- passwordA is {{password1}} -->
+			
+			<div class="form-group mt-1">
+				<label for="exampleInputPassword2">Confirm Password</label> &nbsp;
+				<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirm Password" #passwordB="ngModel" name="passwordB"
+				 required id="passwordB" [(ngModel)]="password2"><br/>
+			</div>
+			
+		<!--	passwordB is {{password2}}-->
+		</div>
+		<div *ngIf="passwordB.invalid && (passwordA.dirty || passwordA.touched)" class="alert alert-danger">
+			Please confirm your password.
+		</div>
+		<div *ngIf="passwords.errors?.passwordCheck && (passwordB.dirty || passwordB.touched)" class="alert alert-danger">
+			Passwords do not match.
+		</div>
+	</form>
+</div>
+</div>
+
+<button id="sub" (click)="sendPass(email,phone,password1,password2)" class="btn btn-primary" > log</button>
+
+
+

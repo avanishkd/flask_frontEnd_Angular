@@ -1,0 +1,136 @@
+<div class="modal-content card card-image" style="background-image: url(logoback.jpg);">
+    <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
+        <!--Header-->
+        <div class="modal-header text-center pb-4">
+            <h3 class="modal-title w-100 white-text font-weight-bold" id="myModalLabel"><strong>SIGN</strong> <a class="green-text font-weight-bold"><strong> UP</strong></a></h3>
+            <button  mat-dialog-close type="button" class="close white-text" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <!--Body-->
+        <div class="modal-body">
+            <!--Body-->
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+            <div class="md-form mb-5">
+                    <label data-error="wrong" data-success="right" for="Form-email5">UserName</label>
+                    <input [(ngModel)]="User_Name" placeholder="First name is enough" type="text" formControlName="userName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" />
+                    <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+                        <div *ngIf="f.userName.errors.required">User Name is required</div>
+                    </div>
+                </div>
+                
+            
+
+            <div class="md-form pb-3">
+                    <label data-error="wrong" data-success="right" for="Form-pass5">Age</label>
+                    <input [(ngModel)]="Age" placeholder="No need to hide!!" type="text" formControlName="age" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.age.errors }" />
+                    <div *ngIf="submitted && f.age.errors" class="invalid-feedback">
+                        <div *ngIf="f.age.errors.required">Age is required</div>
+                    </div>
+                </div>
+                
+            <div class="md-form pb-3">
+                    <label data-error="wrong" data-success="right" for="Form-pass5">E-Mail</label>
+                    <input [(ngModel)]="Email" placeholder="Who does not like updates!!" type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                    </div></div>
+                
+                
+        
+            <div class="md-form pb-3">
+                    <label data-error="wrong" data-success="right" for="Form-pass5">Password</label>
+                    <input [(ngModel)]="Password" placeholder="Make sure no one knows it!!" type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.minlength">Password must be at least 8 characters</div>
+                    </div>
+                
+            
+            </div>
+            <div class="md-form pb-3">
+                    <label data-error="wrong" data-success="right" for="Form-pass5">Confirm_Password</label>
+                    <input [(ngModel)]="Confirm_Password" placeholder="You do remember your password right?" type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.minlength">Password must be at least 8 characters</div>
+                    </div>
+                </div>
+                
+                
+            <div class="md-form pb-3">
+                    <label data-error="wrong" data-success="right" for="Form-pass5">Contact_No.</label>
+                    <input [(ngModel)]="Mobile" placeholder="We may need to contact you!!" type="text" formControlName="mobile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />
+                    <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+                        <div *ngIf="f.mobile.errors.required">Mobile is required</div>
+                        <div *ngIf="f.mobile.errors.minlength">Mobile must be at least 10 characters</div>
+                    </div>
+                </div>
+                
+            <div class="md-form pb-3">
+                    <label data-error="wrong" data-success="right" for="Form-pass5">Address</label>
+                    <input [(ngModel)]="Address" placeholder="Where to deliver your books?!" type="text" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address.errors }" />
+                    <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                        <div *ngIf="f.address.errors.required">Address is required</div>
+                    </div>
+                </div>
+               
+                
+            <div class="md-form pb-3">
+                    <label data-error="wrong" data-success="right" for="Form-pass5">Role</label><br>
+                    <label class="radio-inline">
+                    <input [(ngModel)]="Role" type="radio" formControlName="role" value="Buyer" class="radio-inline"  />Buyer
+                </label>
+                <label class="radio-inline">
+                    <input [(ngModel)]="Role" type="radio" formControlName="role" value="Seller" class="radio-inline"  />Seller
+                </label>
+                 
+            
+            <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
+                    <div *ngIf="f.role.errors.required">Role is required</div>
+                </div>
+            
+    <div *ngIf="Role=='Seller'" class="form-group">
+            <label>Aadhar</label>
+            <input [(ngModel)]="Aadhar" placeholder="Be identified!!" type="text" formControlName="aadhar" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.aadhar.errors }" />
+            <div *ngIf="submitted && f.aadhar.errors" class="invalid-feedback">
+                    <div *ngIf="f.aadhar.errors.required">Role is required</div>
+                </div>
+    </div></div>
+        
+           
+               
+                
+            <br>
+            <br>
+
+            <!--Grid row-->
+            <div class="row d-flex align-items-center mb-4">
+
+                <!--Grid column-->
+                <div class="text-center mb-3 col-md-12">
+                        <button (click)="getposts(User_Name,Age,Email,Password,Confirm_Password,Mobile,Address,Role,Aadhar)" class="btn btn-success btn-block btn-rounded z-depth-1">Sign up</button>
+                </div>
+                <!--Grid column-->
+
+            </div>
+                    </div></form>
+            <!--Grid row-->
+
+            <!--Grid row-->
+            <div class="row">
+
+                <!--Grid column-->
+                <div class="col-md-12">
+                    <p class="font-small white-text d-flex justify-content-end">Have an account? <a href="#" (click)="openLogin();" class="green-text ml-1 font-weight-bold"> Log in</a></p>
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+        </div>
+    </div>
+</div>
